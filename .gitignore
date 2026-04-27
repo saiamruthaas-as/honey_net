@@ -1,0 +1,12 @@
+# Environments
+.env
+venv/
+
+# Backup/State files
+.shadow_backup/
+vault_state.db
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
