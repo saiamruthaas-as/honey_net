@@ -35,7 +35,8 @@ def main():
     print("Starting Streamlit Dashboard...")
     dashboard_path = os.path.join(os.path.dirname(__file__), 'dashboard.py')
     import sys
-    cmd = [sys.executable, "-m", "streamlit", "run", dashboard_path, "--server.port", "8501", "--server.headless", "true"]
+    port = os.environ.get("PORT", "8501")
+    cmd = [sys.executable, "-m", "streamlit", "run", dashboard_path, "--server.port", port, "--server.address", "0.0.0.0", "--server.headless", "true"]
     streamlit_proc = subprocess.Popen(cmd)
     
     print("Vault Tripwire Armed. Waiting for Hacker...")
